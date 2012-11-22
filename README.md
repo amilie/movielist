@@ -14,3 +14,5 @@ $ mysql -u root -proot -h 127.0.0.1 movielist < MovieList/src/db/movielist.sql
 NOTE: If root password is not "root", you'll need to change DB_PASS on line 18
 of MovieList/src/java/db/Database.java
 
+Open http://localhost:8084/MovieList/ in a internet browser. You may have a
+different port number, depending on your Apache settings.
