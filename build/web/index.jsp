@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.*, db.*" errorPage="stderror.jsp" %>
 <!DOCTYPE html>
 <!--
 Author: Amilie Napier
@@ -19,23 +21,47 @@ the source code.
 -->
 <html>
     <head>
+        <%
+        //Things that are here for testing purposes only
+        session.setAttribute("username", "tester");
+        session.setAttribute("loggedIn", "1");
+        %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Movie Watchlist</title>
     </head>
     <body>
         <div id="content">
             <h1>My Movie Watchlist</h1>
-            <ol>
-                <% //populate with list from DB %>
-                <li>Example Movie</li>
-            </ol>
+ 
+            <% if(session.getAttribute("username") != "" &&
+                session.getAttribute("loggedIn") == "1") { 
+                    //create List object for this user
+                    db.List myList = new db.List(session
+                        .getAttribute("username").toString());
+                    out.print("<ol>");
+                    out.print(myList.getString());
+                    out.print("</ol>");
+            %>
+
+                <form>
+                    <p>
+                        <input type="text" id="movietitle" name="movietitle" 
+                            size="32" value="" />
+                        <input type="submit" id="add" name="add" value="Add" />
+                    </p>
+                </form>
+            <% } //end if logged in
+            else { 
+                session.setAttribute("username", "");
+                
+            %>
             <form>
                 <p>
-                    <input type="text" id="movietitle" name="movietitle" 
-                           size="32" value="" />
-                    <input type="submit" id="add" name="add" value="Add" />
+                    <!-- login form goes here -->
                 </p>
-            </form>
+                
+            </form>  
+            <% } //end else%>
         </div>
     </body>
 </html>
