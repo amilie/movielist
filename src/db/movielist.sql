@@ -37,7 +37,7 @@ CREATE TABLE `list` (
 
 LOCK TABLES `list` WRITE;
 /*!40000 ALTER TABLE `list` DISABLE KEYS */;
-INSERT INTO `list` VALUES ('tester','Shawshank Redemption','Morgan Freeman is my homeboy'),('tester','The Avengers',''),('tester','The Hobbit',''),('tester','White Chicks','lol');
+INSERT INTO `list` VALUES ('amilie','Finding Nemo','Just keep swimming!'),('amilie','Gattaca',''),('amilie','Shawshank Redemption','Time and pressure.'),('tester','Shawshank Redemption','Morgan Freeman is my homeboy'),('tester','The Avengers',''),('tester','The Hobbit',''),('tester','White Chicks','lol');
 /*!40000 ALTER TABLE `list` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('tester','2aff75419ca553eab69025c44063c51b1c8da3ee');
+INSERT INTO `user` VALUES ('amilie','929dfabac8899b7e12ba498dcf380b288a01e98c'),('tester','2aff75419ca553eab69025c44063c51b1c8da3ee');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -74,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-22  2:51:17
+-- Dump completed on 2012-11-23 11:16:38
