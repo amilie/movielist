@@ -16,3 +16,13 @@ of MovieList/src/java/db/Database.java
 
 Open http://localhost:8084/MovieList/ in a internet browser. You may have a
 different port number, depending on your Apache settings.
+
+Log in to the webapp using one of the following tester accounts:
+ ------------------------
+|  username  |  password |
+|------------+-----------|
+|  tester    |  testify  |
+|  amilie    |  napier   |
+ ------------------------
+
+
