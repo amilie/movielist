@@ -9,9 +9,9 @@ import java.sql.SQLException;
  */
 public class Database {
     //JDBC driver name
-    private static final String DRIVER = "org.postgresql.Driver";
+    private static final String DRIVER = "java.sql.Driver";
     //database connection string
-    private static final String DB_URL = "jdbc:mysql://localhost:8084/MovieList/";
+    private static final String DB_URL = "jdbc:mysql://localhost:8084/movielist/";
     //database username
     private static final String DB_USER = "root";
     //database password
