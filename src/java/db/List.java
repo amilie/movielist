@@ -12,17 +12,7 @@ public class List {
     private String username;
     private String movie[];
     private String note[];
-    
-    /*
-    public String getPid() {return pid;}
-    public String getJournal() {return journal;}
-    public String getVolume() {return volume;}
-    public String getIssue() {return issue;}
-    */
 
-    /**
-     * Constructs a List.
-     */
     public List(String username) throws SQLException {
         Connection db = Database.open();
         
