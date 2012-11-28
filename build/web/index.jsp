@@ -33,20 +33,36 @@ the source code.
         <div id="content">
             <h1>My Movie Watchlist</h1>
  
-            <% if(session.getAttribute("username") != "" &&
-                session.getAttribute("loggedIn") == "1") { 
+            <% if(session.getAttribute("username").toString().length() > 0 &&
+                session.getAttribute("loggedIn").toString() == "1") { 
+                    //display username and logout link
+                    out.print("<b>"
+                            + session.getAttribute("username").toString()
+                            + "</b> &middot; "
+                            + "<a href='#' id='logout' onclick='session"
+                            + ".setAttribute('username', '')'>log out</a>"
+                            + "<br />");
+                    
                     //create List object for this user
                     db.List myList = new db.List(session
                         .getAttribute("username").toString());
+                    
+                    //print out the items in this user's watchlist
                     out.print("<ol>");
                     out.print(myList.getString());
                     out.print("</ol>");
             %>
 
-                <form>
+                <form onsubmit="myList.addMovie">
                     <p>
+                        <label for="movietitle">Movie Title</label>
                         <input type="text" id="movietitle" name="movietitle" 
                             size="32" value="" />
+                        <br />
+                        <label for="movietitle">Note (optional)</label>
+                        <input type="text" id="note" name="note" 
+                            size="32" value="" />
+                        <br />
                         <input type="submit" id="add" name="add" value="Add" />
                     </p>
                 </form>
@@ -55,11 +71,21 @@ the source code.
                 session.setAttribute("username", "");
                 
             %>
-            <form>
+            <p>
+            Log in to view and edit your watchlist.
+            </p>
+            
+            <form onsubmit="if(User.valid(username, sha1(password)))
+                {session.setAttribute('username', username)}">
                 <p>
-                    <!-- login form goes here -->
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username"
+                           size="20" />
+                    <br />
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"
+                           size="20" />
                 </p>
-                
             </form>  
             <% } //end else%>
         </div>
